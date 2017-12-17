@@ -38,7 +38,7 @@ import {
   resolveApiMethod,
   validateArrowKeys,
   resolveNextIndex
-} from '../services/ngx-typeahead.utils';
+} from '../services/agx-typeahead.utils';
 /*
  using an external template:
  <input [taItemTpl]="itemTpl" >
@@ -48,7 +48,7 @@ import {
   </ng-template>
 */
 @Component({
-  selector: '[ngxTypeahead]',
+  selector: '[agxTypeahead]',
   styles: [
     `
   .typeahead-backdrop {
@@ -62,9 +62,9 @@ import {
   ],
   template: `
   <ng-template #suggestionsTplRef>
-  <section class="list-group results" *ngIf="showSuggestions">
+  <section class="list-group results" *ngIf="showSuggestions" style="z-index: 9999; position: absolute;">
     <div class="typeahead-backdrop" (click)="hideSuggestions()"></div>
-    <button type="button" class="list-group-item"
+    <button type="button" class="list-group-item" style="width: 350px; padding: 5px; text-align: left;"
       *ngFor="let result of results; let i = index;"
       [class.active]="markIsActive(i, result)"
       (click)="handleSelectSuggestion(result)">
@@ -78,7 +78,7 @@ import {
   </ng-template>
   `
 })
-export class NgxTypeAheadComponent implements OnInit, OnDestroy {
+export class AgxTypeAheadComponent implements OnInit, OnDestroy {
   showSuggestions = false;
   results: string[];
 

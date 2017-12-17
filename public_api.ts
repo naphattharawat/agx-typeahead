@@ -9,5 +9,5 @@
 /**
  * Entry point for all public APIs of the package.
  */
-export { NgxTypeaheadModule } from './src/modules/ngx-typeahead.module';
+export { AgxTypeaheadModule } from './src/modules/agx-typeahead.module';
 

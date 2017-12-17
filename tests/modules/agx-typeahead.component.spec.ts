@@ -10,13 +10,13 @@ import {
   ViewContainerRef,
   DebugElement
 } from '@angular/core';
-import { NgxTypeAheadComponent } from '../../src/modules/ngx-typeahead.component';
-import { NgxTypeaheadModule } from '../../src/modules/ngx-typeahead.module';
+import { AgxTypeAheadComponent } from '../../src/modules/agx-typeahead.component';
+import { AgxTypeaheadModule } from '../../src/modules/agx-typeahead.module';
 import { Key } from '../../src/models';
 
 describe('A Typeahead component', () => {
-  let component: NgxTypeAheadComponent;
-  let fixture: ComponentFixture<NgxTypeAheadComponent>;
+  let component: AgxTypeAheadComponent;
+  let fixture: ComponentFixture<AgxTypeAheadComponent>;
   // let de: DebugElement;
   let spyElementRef;
   let spyViewContainerRef;
@@ -34,14 +34,14 @@ describe('A Typeahead component', () => {
     spyChangeDetectorRef = jasmine.createSpyObj('spyChangeDetectorRef', [ 'markForCheck' ]);
 
     // setting spy on methods
-    spyOn(NgxTypeAheadComponent.prototype, 'filterEnterEvent').and.callThrough();
-    spyOn(NgxTypeAheadComponent.prototype, 'listenAndSuggest').and.callThrough();
-    spyOn(NgxTypeAheadComponent.prototype, 'navigateWithArrows').and.callThrough();
-    spyOn(NgxTypeAheadComponent.prototype, 'onElementKeyDown').and.callThrough();
-    spyOn(NgxTypeAheadComponent.prototype, 'renderTemplate');
+    spyOn(AgxTypeAheadComponent.prototype, 'filterEnterEvent').and.callThrough();
+    spyOn(AgxTypeAheadComponent.prototype, 'listenAndSuggest').and.callThrough();
+    spyOn(AgxTypeAheadComponent.prototype, 'navigateWithArrows').and.callThrough();
+    spyOn(AgxTypeAheadComponent.prototype, 'onElementKeyDown').and.callThrough();
+    spyOn(AgxTypeAheadComponent.prototype, 'renderTemplate');
 
     TestBed.configureTestingModule({
-      declarations: [ NgxTypeAheadComponent ],
+      declarations: [ AgxTypeAheadComponent ],
       imports: [ HttpModule ],
       providers: [
         { provide: ElementRef, useValue: spyElementRef },
@@ -52,7 +52,7 @@ describe('A Typeahead component', () => {
       ]
     });
 
-    fixture = TestBed.createComponent(NgxTypeAheadComponent);
+    fixture = TestBed.createComponent(AgxTypeAheadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

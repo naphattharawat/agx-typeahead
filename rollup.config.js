@@ -1,9 +1,9 @@
 export default {
-    entry: './dist/modules/ngx-typeahead.es5.js',
-    dest: './dist/bundles/ngx-typeahead.umd.js',
+    entry: './dist/modules/agx-typeahead.es5.js',
+    dest: './dist/bundles/agx-typeahead.umd.js',
     format: 'umd',
     exports: 'named',
-    moduleName: 'ng.ngxTypeahead',
+    moduleName: 'ng.agxTypeahead',
     external: [
         '@angular/core',
         '@angular/common',

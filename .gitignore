@@ -57,3 +57,5 @@ $ cat .gitignore
 
 *.log
 *.tgz
+
+package-lock.json

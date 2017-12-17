@@ -1,1 +1,1 @@
-import { NgxTypeaheadModule } from './src/ngx-typeahead';
+import { AgxTypeaheadModule } from './src/agx-typeahead';

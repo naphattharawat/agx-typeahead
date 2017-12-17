@@ -1,10 +1,10 @@
 {
-  "name": "ngx-typeahead",
-  "version": "0.0.4",
+  "name": "agx-typeahead",
+  "version": "0.0.16",
   "description": "A simple but yet powerful typeahead component for Angular",
-  "main": "./bundles/ngx-typeahead.umd.js",
-  "module": "./modules/ngx-typeahead.es5.js",
-  "es2015": "./modules/ngx-typeahead.js",
+  "main": "./bundles/agx-typeahead.umd.js",
+  "module": "./modules/agx-typeahead.es5.js",
+  "es2015": "./modules/agx-typeahead.js",
   "scripts": {
     "build": "node build.js",
     "test": "karma start",
