@@ -90,6 +90,7 @@ export class AgxTypeAheadComponent implements OnInit, OnDestroy {
   @Input() taApi = 'jsonp';
   @Input() taApiMethod = 'get';
   @Input() taResponseTransform;
+  @Input() taAllowEmpty = false;
 
   @Output() taSelected = new EventEmitter<string>();
 
@@ -155,7 +156,7 @@ export class AgxTypeAheadComponent implements OnInit, OnDestroy {
       .debounceTime(300)
       .concat()
       .distinctUntilChanged()
-      .filter((query: string) => query.length > 0)
+      .filter((query: string) => this.taAllowEmpty || hasCharacters(query))
       .switchMap((query: string) => this.suggest(query))
       .subscribe((results: string[]) => {
         this.results = results;
