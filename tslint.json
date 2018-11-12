@@ -37,7 +37,7 @@
         "no-submodule-imports": false,
         "no-input-rename": true,
         "no-output-rename": true,
-        "no-forward-ref": true,
+        "no-forward-ref": false,
         "use-view-encapsulation": false,
         "use-life-cycle-interface": true,
         "use-pipe-transform-interface": true,
@@ -66,6 +66,9 @@
         "member-access": [
             false,
             "check-accessor"
+        ],
+        "object-literal-sort-keys": [
+            false
         ]
     }
 }

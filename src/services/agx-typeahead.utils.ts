@@ -24,6 +24,14 @@ export function isIndexActive(index: number, currentIndex: number) {
   return index === currentIndex;
 }
 
+export function isEnterKey(event: KeyboardEvent) {
+  return event.keyCode === Key.Enter;
+}
+
+export function isEscapeKey(event: KeyboardEvent) {
+  return event.keyCode === Key.Escape;
+}
+
 export function createParamsForQuery(
   query: string,
   queryParamKey = 'q',
@@ -34,7 +42,8 @@ export function createParamsForQuery(
     ...customParams
   };
   // tslint:disable-next-line
-  const setParam = (acc: HttpParams, param: string) => acc.set(param, searchParams[param]);
+  const setParam = (acc: HttpParams, param: string) =>
+    acc.set(param, searchParams[param]);
   const params = Object.keys(searchParams).reduce(setParam, new HttpParams());
   return params;
 }
@@ -51,11 +60,15 @@ export function resolveApiMethod(method = '') {
   const apiMethod = isMethodValid ? method : 'get';
   return apiMethod;
 }
-
-export function resolveNextIndex(currentIndex: number, stepUp: boolean) {
+export const NO_INDEX = -1;
+export function resolveNextIndex(
+  currentIndex: number,
+  stepUp: boolean,
+  listLength = 10
+) {
   const step = stepUp ? 1 : -1;
-  const topLimit = 9;
-  const bottomLimit = 0;
+  const topLimit = listLength - 1;
+  const bottomLimit = NO_INDEX;
   const currentResultIndex = currentIndex + step;
   let resultIndex = currentResultIndex;
   if (currentResultIndex === topLimit + 1) {
@@ -65,4 +78,35 @@ export function resolveNextIndex(currentIndex: number, stepUp: boolean) {
     resultIndex = topLimit;
   }
   return resultIndex;
+}
+
+export function toJsonpSingleResult(response: any) {
+  return response[1];
+}
+
+export function toJsonpFinalResults(results: any[]) {
+  return results.map((result: any) => result[0]);
+}
+
+export function hasCharacters(query: string) {
+  return query.length > 0;
+}
+
+export function toFormControlValue(e: any) {
+  return e.target.value;
+}
+
+export function resolveItemValue(
+  item: string | any,
+  fieldsToExtract: string[],
+  caseSensitive = false
+) {
+  let newItem = item;
+  if (!item.hasOwnProperty('length')) {
+    const fields = !fieldsToExtract.length
+      ? Object.keys(item)
+      : fieldsToExtract;
+    newItem = fields.reduce((acc, cur) => `${acc}${item[cur]}`, '');
+  }
+  return caseSensitive ? newItem : newItem.toLowerCase();
 }
