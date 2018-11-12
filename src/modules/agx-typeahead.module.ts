@@ -11,12 +11,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/fromEvent';
 
-import { NgxTypeAheadComponent } from './ngx-typeahead.component';
+import { AgxTypeAheadComponent } from './agx-typeahead.component';
 
 @NgModule({
-  declarations: [NgxTypeAheadComponent],
-  exports: [NgxTypeAheadComponent, CommonModule],
+  declarations: [AgxTypeAheadComponent],
+  exports: [AgxTypeAheadComponent, CommonModule],
   imports: [CommonModule, HttpClientModule, HttpClientJsonpModule],
   providers: []
 })
-export class NgxTypeaheadModule { }
+export class AgxTypeaheadModule { }

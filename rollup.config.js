@@ -42,7 +42,7 @@ export default {
     onwarn: () => { return },
     output: {
         format: 'umd',
-        name: 'ng.ngxTypeahead',
+        name: 'ng.agxTypeahead',
         globals: globals,
         sourcemap: true,
         exports: 'named'

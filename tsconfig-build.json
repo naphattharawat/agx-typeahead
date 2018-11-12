@@ -33,7 +33,7 @@
         "skipTemplateCodegen": true,
         "annotateForClosureCompiler": true,
         "strictMetadataEmit": true,
-        "flatModuleOutFile": "ngx-typeahead.js",
-        "flatModuleId": "ngx-typeahead"
+        "flatModuleOutFile": "agx-typeahead.js",
+        "flatModuleId": "@siteslave/agx-typeahead"
     }
 }

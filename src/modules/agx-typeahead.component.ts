@@ -1,4 +1,6 @@
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import {
   ChangeDetectorRef,
   Component,
@@ -24,7 +26,7 @@ import {
   resolveApiMethod,
   validateArrowKeys,
   resolveNextIndex
-} from '../services/ngx-typeahead.utils';
+} from '../services/agx-typeahead.utils';
 import { Subject } from 'rxjs/Subject';
 /*
  using an external template:
@@ -35,12 +37,13 @@ import { Subject } from 'rxjs/Subject';
   </ng-template>
 */
 @Component({
-  selector: '[ngxTypeahead]',
+  selector: '[agxTypeahead]',
   styles: [
     `
   .results {
     position: absolute;
   }
+  
   .typeahead-backdrop {
     bottom: 0;
     left: 0;
@@ -59,7 +62,7 @@ import { Subject } from 'rxjs/Subject';
   <ng-template #suggestionsTplRef>
   <section class="list-group results" *ngIf="showSuggestions">
     <div class="typeahead-backdrop" (click)="hideSuggestions()"></div>
-    <button type="button" class="list-group-item"
+    <button type="button" class="list-group-item" style="width: 350px; padding: 5px; text-align: left;"
       *ngFor="let result of results; let i = index;"
       [class.active]="markIsActive(i, result)"
       (click)="handleSelectSuggestion(result)">
@@ -73,7 +76,7 @@ import { Subject } from 'rxjs/Subject';
   </ng-template>
   `
 })
-export class NgxTypeAheadComponent implements OnInit, OnDestroy {
+export class AgxTypeAheadComponent implements OnInit, OnDestroy {
   showSuggestions = false;
   results: string[];
 

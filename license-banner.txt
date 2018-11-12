@@ -1,4 +1,4 @@
 /**
- * @license ngx-typeahead
+ * @license agx-typeahead
  * MIT license
  */

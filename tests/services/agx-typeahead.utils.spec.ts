@@ -2,7 +2,7 @@ import {
   async,
   inject
 } from '@angular/core/testing';
-import * as typeaheadUtils from '../../src/services/ngx-typeahead.utils';
+import * as typeaheadUtils from '../../src/services/agx-typeahead.utils';
 import { Key } from '../../src/models';
 
 describe('TypeAhead Utils', () => {
