@@ -1,6 +1,6 @@
 {
   "name": "@siteslave/agx-typeahead",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple but yet powerful typeahead json/http component for Angular",
   "main": "./bundles/agx-typeahead.umd.js",
   "module": "./esm5/agx-typeahead.js",
