@@ -62,11 +62,11 @@ import {
         position: fixed;
         right: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10000;
       }
       .ta-item {
         position: relative;
-        z-index: 2;
+        z-index: 20000;
         display: block;
       }
     `
@@ -94,7 +94,7 @@ export class AgxTypeAheadComponent implements OnInit, OnDestroy {
   results: string[] = [];
 
   @Input()
-  taItemTpl: TemplateRef<any>;
+  taItemTpl!: TemplateRef<any>;
   @Input()
   taUrl = '';
   @Input()
@@ -126,7 +126,7 @@ export class AgxTypeAheadComponent implements OnInit, OnDestroy {
   taSelected = new EventEmitter<string | any>();
 
   @ViewChild('suggestionsTplRef')
-  suggestionsTplRef: TemplateRef<any>;
+  suggestionsTplRef!: TemplateRef<any>;
 
   private suggestionIndex = 0;
   private subscriptions: Subscription[] = [];

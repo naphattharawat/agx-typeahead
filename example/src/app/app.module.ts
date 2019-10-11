@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxTypeaheadModule } from 'ngx-typeahead';
+import { AgxTypeaheadModule } from 'agx-typeahead';
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxTypeaheadModule
+    AgxTypeaheadModule
   ],
   providers: [
   ],
