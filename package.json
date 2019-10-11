@@ -1,6 +1,6 @@
 {
   "name": "@tanjaae/agx-typeahead",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple but yet powerful typeahead json/http component for Angular",
   "main": "./bundles/agx-typeahead.umd.js",
   "module": "./esm5/agx-typeahead.js",
@@ -10,7 +10,7 @@
     "test": "karma start",
     "test:watch": "karma start --single-run=false",
     "pack:lib": "npm pack ./dist",
-    "publish:lib": "npm publish ./dist",
+    "publish:lib": "npm publish --access ./dist",
     "publish:lib:next": "npm run build && npm publish --tag next ./dist",
     "compodoc": "compodoc -p tsconfig.json",
     "compodoc-serve": "compodoc -s",
